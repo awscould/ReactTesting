@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest  # This will use the latest available Node.js version
+    commands:
+      - echo "Installing dependencies..."
+      - npm install  # Install project dependencies
+      
+  build:
+    commands:
+      - echo "Building the React application..."
+      - npm run build  # Build the React app for production
+
+artifacts:
+  files:
+    - appspec.yml
+    - '**/*'  # Include all files in the build output
+  base-directory: build  # The output directory for the built files
